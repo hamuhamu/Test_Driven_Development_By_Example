@@ -3,10 +3,10 @@
 namespace App;
 
 use PHPUnit\Framework\TestCase;
+use App\Dollar;
 
 class MoneyTest extends TestCase
 {
-
     /**
      * @test
      */
