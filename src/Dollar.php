@@ -14,4 +14,13 @@ class Dollar
     {
         return new Dollar($this->amount * $multiplier);
     }
+
+    public function equals($object): bool
+    {
+        // PHPはできない
+        // $dollar = (Dollar)$object;
+        $dollar = $object;
+
+        return $this->amount === $dollar->amount;
+    }
 }
