@@ -2,9 +2,11 @@
 
 namespace App;
 
-class Money
+abstract class Money
 {
     protected $amount;
+
+    abstract public function times(int $amount): Money;
 
     public function equals($object): bool
     {
@@ -13,5 +15,10 @@ class Money
         $money = $object;
 
         return $this->amount === $money->amount && get_called_class() === get_class($money);
+    }
+
+    public static function dollar(int $amount): Dollar
+    {
+        return new Dollar($amount);
     }
 }
