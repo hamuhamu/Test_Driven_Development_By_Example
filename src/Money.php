@@ -2,7 +2,7 @@
 
 namespace App;
 
-abstract class Money
+class Money
 {
     protected $amount;
     protected $currency;
@@ -13,7 +13,10 @@ abstract class Money
         $this->currency = $currency;
     }
 
-    abstract public function times(int $amount): Money;
+    public function times(int $multiplier): Money
+    {
+        return null;
+    }
 
     public function equals($object): bool
     {
