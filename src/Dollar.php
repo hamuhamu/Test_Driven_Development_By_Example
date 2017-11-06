@@ -4,14 +4,14 @@ namespace App;
 
 class Dollar extends Money
 {
-    public function __construct(int $amount)
+    public function __construct(int $amount, String $currency)
     {
         $this->amount = $amount;
-        $this->currency = 'USD';
+        $this->currency = $currency;
     }
 
     public function times(int $multiplier): Money
     {
-        return new Dollar($this->amount * $multiplier);
+        return Money::dollar($this->amount * $multiplier);
     }
 }
