@@ -7,6 +7,12 @@ abstract class Money
     protected $amount;
     protected $currency;
 
+    public function __construct(int $amount, String $currency)
+    {
+        $this->amount = $amount;
+        $this->currency = $currency;
+    }
+
     abstract public function times(int $amount): Money;
 
     public function equals($object): bool
