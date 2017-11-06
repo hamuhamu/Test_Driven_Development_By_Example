@@ -5,9 +5,9 @@ namespace App;
 abstract class Money
 {
     protected $amount;
+    protected $currency;
 
     abstract public function times(int $amount): Money;
-    abstract public function currency(): String;
 
     public function equals($object): bool
     {
@@ -26,5 +26,10 @@ abstract class Money
     public static function franc(int $amount): Franc
     {
         return new Franc($amount);
+    }
+
+    public function currency(): String
+    {
+        return $this->currency;
     }
 }
