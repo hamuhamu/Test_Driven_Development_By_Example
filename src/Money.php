@@ -27,6 +27,11 @@ class Money
         return $this->amount === $money->amount && get_called_class() === get_class($money);
     }
 
+    public function __toString()
+    {
+        return $this->amount . ' ' . $this->currency;
+    }
+
     public static function dollar(int $amount): Dollar
     {
         return new Dollar($amount, 'USD');
