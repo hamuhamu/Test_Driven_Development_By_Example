@@ -24,7 +24,7 @@ class Money
         // $money = (Money)$object;
         $money = $object;
 
-        return $this->amount === $money->amount && get_called_class() === get_class($money);
+        return $this->amount === $money->amount && $this->currency() === $money->currency();
     }
 
     public function __toString()
