@@ -13,9 +13,10 @@ class Money
         $this->currency = $currency;
     }
 
+
     public function times(int $multiplier): Money
     {
-        return null;
+        return new Money($this->amount * $multiplier, $this->currency);
     }
 
     public function equals($object): bool
