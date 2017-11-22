@@ -48,4 +48,19 @@ class MoneyTest extends TestCase
 
         $this->assertEquals(Money::dollar(10), $reduced);
     }
+
+    /**
+     * @test
+     */
+    public function testReturnsSum()
+    {
+        $five = Money::dollar(5);
+        $result = $five->plus($five);
+        // PHPはできない
+        // $sum = (Sum)$result;
+        $sum = $result;
+
+        $this->assertEquals($five, $sum->augend);
+        $this->assertEquals($five, $sum->addend);
+    }
 }
