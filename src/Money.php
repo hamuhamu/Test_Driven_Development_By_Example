@@ -51,4 +51,9 @@ class Money implements Expression
     {
         return $this->currency;
     }
+
+    public function amount(): int
+    {
+        return $this->amount;
+    }
 }

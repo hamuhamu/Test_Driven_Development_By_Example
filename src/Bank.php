@@ -6,6 +6,10 @@ class Bank
 {
     public function reduce(Expression $source, String $to): Money
     {
-        return Money::dollar(10);
+        // PHPはできない
+        // $sum = (Sum)$source;
+        $sum = $source;
+
+        return $sum->reduce($to);
     }
 }
