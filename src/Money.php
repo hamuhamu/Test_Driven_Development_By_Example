@@ -47,6 +47,11 @@ class Money implements Expression
         return new Money($amount, 'CHF');
     }
 
+    public function reduce(String $to): Money
+    {
+        return $this;
+    }
+
     public function currency(): String
     {
         return $this->currency;
