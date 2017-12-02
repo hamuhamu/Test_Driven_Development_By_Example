@@ -22,7 +22,7 @@ class Sum implements Expression
         $this->addend = $addend;
     }
 
-    public function reduce(String $to): Money
+    public function reduce(Bank $bank, String $to): Money
     {
         $amount = $this->augend->amount() + $this->addend->amount();
 
