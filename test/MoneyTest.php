@@ -98,4 +98,12 @@ class MoneyTest extends TestCase
 
         $this->assertEquals(Money::dollar(1), $result);
     }
+
+    /**
+     * @test
+     */
+    public function testIdentityRate()
+    {
+        $this->assertEquals(1, (new Bank())->rate('USD', 'USD'));
+    }
 }

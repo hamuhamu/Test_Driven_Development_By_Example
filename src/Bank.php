@@ -25,6 +25,10 @@ class Bank
 
     public function rate(String $from, String $to): int
     {
-        return ($from === 'CHF' && $to === 'USD') ? 2 : 1;
+        if ($from === $to) {
+            return 1;
+        }
+
+        return $this->rates[$from . '_' . $to];
     }
 }
